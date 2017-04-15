@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.myworks.jithin.malappuram.networkconnection.NoInternetActivity">
+    <include layout="@layout/toolbar"/>
+    <ImageButton
+        android:id="@+id/iv_no_internet"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/icon_globe"
+        />
+    <TextView
+        android:id="@+id/tv_oops"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OOOOOPPPs..."
+        android:textSize="30sp"
+        android:layout_below="@id/iv_no_internet"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/tv_no_internet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Internet"
+        android:layout_below="@id/tv_oops"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:text="Try Again"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/tv_no_internet"
+        android:background="@color/app_red"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/white_smoke"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

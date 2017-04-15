@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.myworks.jithin.malappuram.itemList.ItemListActivity">
+<include layout="@layout/toolbar"/>
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_above="@+id/ll_bottom_toolbar"
+       android:background="@color/trans_black"
+       android:layout_marginTop="50dp"
+       android:layout_marginBottom="50dp">
+       <android.support.v7.widget.CardView
+           android:id="@+id/cv_item1"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/toolbar"
+           android:layout_marginLeft="5dp"
+           android:layout_marginTop="5dp"
+           >
+           <RelativeLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="5dp">
+               <ImageButton
+                   android:id="@+id/iv_item1"
+                   android:layout_width="170dp"
+                   android:layout_height="200dp" />
+               <TextView
+                   android:id="@+id/tv_item1"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="KMT Silks"
+                   android:layout_below="@id/iv_item1"
+                   android:layout_centerHorizontal="true"
+                   android:textStyle="bold"
+                   />
+           </RelativeLayout>
+       </android.support.v7.widget.CardView>
+       <android.support.v7.widget.CardView
+           android:id="@+id/cv_item2"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/toolbar"
+           android:layout_marginLeft="2dp"
+           android:layout_alignParentRight="true"
+           android:layout_marginRight="2dp"
+           android:layout_marginTop="5dp"
+
+
+           >
+           <RelativeLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="5dp">
+               <ImageButton
+                   android:id="@+id/iv_item2"
+                   android:layout_width="170dp"
+                   android:layout_height="200dp" />
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="KMT Silks"
+                   android:layout_below="@+id/iv_item2"
+                   android:layout_centerHorizontal="true"
+                   android:textStyle="bold"
+                   />
+           </RelativeLayout>
+       </android.support.v7.widget.CardView>
+       <android.support.v7.widget.CardView
+           android:id="@+id/cv_item3"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/cv_item1"
+           android:layout_marginTop="5dp"
+           android:layout_marginLeft="5dp"
+           android:layout_marginRight="2dp"
+           >
+           <RelativeLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="5dp">
+               <ImageButton
+                   android:id="@+id/iv_item3"
+                   android:layout_width="170dp"
+                   android:layout_height="200dp" />
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="KMT Silks"
+                   android:layout_centerHorizontal="true"
+                   android:textStyle="bold"
+                   android:layout_below="@+id/iv_item3"
+                   />
+           </RelativeLayout>
+       </android.support.v7.widget.CardView>
+       <android.support.v7.widget.CardView
+           android:id="@+id/cv_item4"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/cv_item2"
+           android:layout_marginTop="5dp"
+           android:layout_marginLeft="2dp"
+           android:layout_marginRight="2dp"
+           android:layout_alignParentRight="true"
+           >
+           <RelativeLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="5dp">
+               <ImageButton
+                   android:id="@+id/iv_item4"
+                   android:layout_width="170dp"
+                   android:layout_height="200dp" />
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="KMT Silks"
+                   android:layout_centerHorizontal="true"
+                   android:textStyle="bold"
+                   android:layout_below="@id/iv_item4"
+                   />
+           </RelativeLayout>
+       </android.support.v7.widget.CardView>
+   </RelativeLayout>
+    <include layout="@layout/bottom_toolbar"/>
+</RelativeLayout>

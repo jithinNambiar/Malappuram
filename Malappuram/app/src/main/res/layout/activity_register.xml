@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.myworks.jithin.malappuram.register.RegisterActivity">
+<include layout="@layout/toolbar"/>
+    <ImageView
+        android:id="@+id/iv_register_logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/cityapp_launcher"
+        />
+    <EditText
+        android:id="@+id/et_register_otp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_register_logo"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textSize="22sp"
+        android:gravity="center"
+        android:hint="Enter  OTP"/>
+    <Button
+        android:id="@+id/bt_register_otp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textSize="20sp"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:textColor="@color/white_smoke"
+        android:text="Verify Mobile number"
+        android:textStyle="bold"
+        android:layout_below="@id/et_register_otp"
+        android:background="@color/app_red"
+        />
+    <include layout="@layout/bottom_toolbar"/>
+</RelativeLayout>
