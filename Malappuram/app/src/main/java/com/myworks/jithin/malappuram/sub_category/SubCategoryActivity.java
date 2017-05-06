@@ -10,6 +10,8 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.myworks.jithin.malappuram.MainActivity;
 import com.myworks.jithin.malappuram.R;
@@ -18,6 +20,8 @@ import com.myworks.jithin.malappuram.main_category.HomeRecyclerAdapter;
 import com.myworks.jithin.malappuram.main_category.MainCategoryActivity;
 import com.myworks.jithin.malappuram.model.MainCategoryItems;
 import com.myworks.jithin.malappuram.model.SubCateogryItems;
+import com.myworks.jithin.malappuram.news.NewsActivity;
+import com.myworks.jithin.malappuram.notification.NotificationActivity;
 import com.myworks.jithin.malappuram.webservice.ApiService;
 import com.myworks.jithin.malappuram.webservice.webmodels.main_category.MainCategory;
 import com.myworks.jithin.malappuram.webservice.webmodels.main_category.Mcategory;
@@ -34,7 +38,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class SubCategoryActivity extends AppCompatActivity {
+public class SubCategoryActivity extends AppCompatActivity implements View.OnClickListener {
     private RecyclerView recyclerView;
     SubCateogryItems subCateogryItems ;
     List<SubCateogryItems> items= new ArrayList<>();
@@ -42,13 +46,17 @@ public class SubCategoryActivity extends AppCompatActivity {
     private Toolbar toolbar;
     final Random mRandom = new Random(System.currentTimeMillis());
     private ProgressDialog mProgress;
-
+    private ImageButton home,category,news,notification;
     public String id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recycler_view_sub);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        home = (ImageButton) findViewById(R.id.iv_home);
+        category = (ImageButton) findViewById(R.id.iv_categories_home);
+        news = (ImageButton) findViewById(R.id.iv_news);
+        notification = (ImageButton) findViewById(R.id.iv_notification);
+        toolbar = (Toolbar) findViewById(R.id.toolbar_search);
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -65,6 +73,10 @@ public class SubCategoryActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setAdapter(adapter);
         prepareData();
+        home.setOnClickListener(this);
+        category.setOnClickListener(this);
+        news.setOnClickListener(this);
+        notification.setOnClickListener(this);
 //        SubCategoryAdapter.SubCategoryAdapterListener subCategoryAdapterListener = new SubCategoryAdapter.SubCategoryAdapterListener() {
 //            @Override
 //            public void subCatAdapterListener() {
@@ -142,5 +154,31 @@ public class SubCategoryActivity extends AppCompatActivity {
         final int blue = (Color.blue(baseColor) + mRandom.nextInt(256)) / 2;
 
         return Color.rgb(red, green, blue);
+    }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent;
+        switch (view.getId()) {
+            case R.id.iv_home:
+                intent = new Intent(getApplication(), MainActivity.class);
+                finish();
+                startActivity(intent);
+                break;
+            case R.id.iv_news:
+                intent = new Intent(getApplication(), NewsActivity.class);
+                finish();
+                startActivity(intent);
+                break;
+            case R.id.iv_notification:
+                intent = new Intent(getApplication(), NotificationActivity.class);
+                finish();
+                startActivity(intent);
+                break;
+            default:
+                intent = new Intent(getApplicationContext(), MainActivity.class);
+                finish();
+                startActivity(intent);
+        }
     }
 }

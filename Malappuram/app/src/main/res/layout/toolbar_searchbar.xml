@@ -10,8 +10,18 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:titleTextColor="@color/white_smoke"
-        app:popupTheme="@style/AppTheme.PopupOverlay" />
-   <RelativeLayout
+        app:popupTheme="@style/AppTheme.PopupOverlay" >
+        <com.myworks.jithin.malappuram.util.custom_textview.CustomTextBold
+            android:id="@+id/tv_toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"/>
+    </android.support.v7.widget.Toolbar>
+    <RelativeLayout
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:background="@color/app_red"
@@ -21,15 +31,17 @@
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:text="Search Services"
-           android:gravity="center"
            android:textStyle="bold"
            android:textSize="18sp"
+           android:paddingLeft="5dp"
            android:paddingTop="10dp"
            android:textColor="@color/dark_grey"
            android:background="@color/white_smoke"
            android:layout_marginLeft="10dp"
            android:layout_marginRight="10dp"
            android:paddingBottom="10dp"
+           android:minLines="1"
+           android:maxLines="1"
            android:drawableLeft="@drawable/search"
            android:padding="10dp"
            />

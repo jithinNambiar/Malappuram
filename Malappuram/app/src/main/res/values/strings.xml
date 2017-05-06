@@ -18,5 +18,7 @@
     <string name="location"><b><u>Perinthalmanna</u></b></string>
     <string name="item_details"><b>Details</b></string>
     <string name="browse_categories"> Browse Categories </string>
+    <string name="listItemName">List Item Name</string>
+    <string name="getItemDetails">Get Details</string>
     <string name="other">Other</string>
 </resources>

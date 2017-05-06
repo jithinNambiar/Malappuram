@@ -49,8 +49,8 @@
             android:layout_height="wrap_content"
             android:paddingRight="2dp"
             android:layout_weight="1">
-            <ImageView
-                android:id="@+id/iv_categories"
+            <ImageButton
+                android:id="@+id/iv_categories_home"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_centerHorizontal="true"
@@ -63,7 +63,7 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
                 android:textSize="12sp"
-                android:layout_below="@id/iv_categories"
+                android:layout_below="@id/iv_categories_home"
                 android:textColor="@color/dark_grey"
                 android:text="@string/categories"/>
         </RelativeLayout>
@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:paddingRight="2dp"
             android:layout_weight="1">
-            <ImageView
+            <ImageButton
                 android:id="@+id/iv_news"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:paddingRight="2dp"
             android:layout_weight="1">
-            <ImageView
+            <ImageButton
                 android:id="@+id/iv_notification"
                 android:layout_width="45dp"
                 android:layout_height="45dp"

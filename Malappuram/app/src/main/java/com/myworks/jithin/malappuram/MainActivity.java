@@ -1,6 +1,9 @@
 package com.myworks.jithin.malappuram;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -11,23 +14,38 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.myworks.jithin.malappuram.main_category.MainCategoryActivity;
+import com.myworks.jithin.malappuram.networkconnection.NoInternetActivity;
+import com.myworks.jithin.malappuram.news.NewsActivity;
+import com.myworks.jithin.malappuram.notification.NotificationActivity;
+import com.myworks.jithin.malappuram.profile.ProfileActivity;
+import com.myworks.jithin.malappuram.register.RegisterActivity;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,View.OnClickListener {
+    private ImageButton home,category,news,notification;
+    private TextView login,register,tittle;
+    private View navHeader;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+                Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        home = (ImageButton) findViewById(R.id.iv_home);
+        category = (ImageButton) findViewById(R.id.iv_categories_home);
+        news = (ImageButton) findViewById(R.id.iv_news);
+        notification = (ImageButton) findViewById(R.id.iv_notification);
+        tittle = (TextView) findViewById(R.id.tv_toolbar);
         setSupportActionBar(toolbar);
-
+        getSupportActionBar().setTitle("");
+        tittle.setText("Malappuram App");
         RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.rl_browse_categories);
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -35,14 +53,46 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navHeader = navigationView.getHeaderView(0);
+        login = (TextView) navHeader.findViewById(R.id.tv_login_name);
+        register = (TextView) navHeader.findViewById(R.id.tv_sign_in_label);
         navigationView.setNavigationItemSelectedListener(this);
         relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainCategoryActivity.class);
-                startActivity(intent);
+                if(isNetworkAvailable()) {
+                    Intent intent = new Intent(getApplicationContext(), MainCategoryActivity.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(getApplicationContext(), NoInternetActivity.class);
+                    startActivity(intent);
+                }
             }
         });
+
+            home.setOnClickListener(this);
+            category.setOnClickListener(this);
+            news.setOnClickListener(this);
+            notification.setOnClickListener(this);
+            login.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                    finish();
+                    startActivity(intent);
+
+                }
+            });
+            register.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                    finish();
+                    startActivity(intent);
+
+                }
+            });
 
     }
 
@@ -103,5 +153,29 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    @Override
+    public void onClick(View view) {
+        Intent intent ;
+        switch(view.getId()){
+            case R.id.iv_categories_home : intent = new Intent(getApplication(),MainCategoryActivity.class);
+                                            startActivity(intent);
+                break;
+            case R.id.iv_news            : intent = new Intent(getApplication(),NewsActivity.class);
+                                            startActivity(intent);
+                break;
+            case R.id.iv_notification    : intent = new Intent(getApplication(),NotificationActivity.class);
+                                            startActivity(intent);
+                break;
 
+
+            default: intent = new Intent(getApplicationContext(),MainActivity.class);
+                                startActivity(intent);
+        }
+    }
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
 }

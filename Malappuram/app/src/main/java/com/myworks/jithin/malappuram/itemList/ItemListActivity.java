@@ -17,8 +17,8 @@ import com.myworks.jithin.malappuram.childcategory.ChildCategoryActivity;
 import com.myworks.jithin.malappuram.childcategory.ChildCategoryDetail;
 
 public class ItemListActivity extends AppCompatActivity {
-    private CardView cv1,cv2,cv3,cv4;
-    private ImageButton iv1,iv2,iv3,iv4;
+    private CardView cv1, cv2, cv3, cv4;
+    private ImageButton iv1, iv2, iv3, iv4;
     private Toolbar toolbar;
     private ProgressDialog mProgress;
 
@@ -67,6 +67,7 @@ public class ItemListActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -80,11 +81,12 @@ public class ItemListActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-    private void loadImages (){
+
+    private void loadImages() {
         Glide.with(getApplicationContext()).load("https://ethnickart.files.wordpress.com/2015/03/maheshwari-sarees-post.png").into(iv1);
         Glide.with(getApplicationContext()).load("http://www.maebag.com/images/big-0909-6007.jpg").into(iv2);
         Glide.with(getApplicationContext()).load("http://imshopping.rediff.com/imgshop/800-1280/shopping/pixs/16995/1/1003_55069799b653e._vandv-summer-cool-cotton-embroidery-yellow-churidar-dress-material.jpg").into(iv3);
         Glide.with(getApplicationContext()).load("http://orig04.deviantart.net/8f17/f/2013/247/6/e/indian_saree_model_png_file_by_theartist100-d6l0thi.png").into(iv4);
-            mProgress.cancel();
+        mProgress.cancel();
     }
 }

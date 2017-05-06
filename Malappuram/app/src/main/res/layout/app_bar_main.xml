@@ -23,6 +23,9 @@
 
     <include layout="@layout/content_main" />
 
-    <include layout="@layout/bottom_toolbar"/>
+    <!--<include layout="@layout/bottom_toolbar"/>-->
+
+    <!--/////////////bottom toolbar//////-->
+
 
 </android.support.design.widget.CoordinatorLayout>

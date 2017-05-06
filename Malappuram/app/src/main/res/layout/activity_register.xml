@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.myworks.jithin.malappuram.register.RegisterActivity">
-<include layout="@layout/toolbar"/>
+<include layout="@layout/toolbar_searchbar"/>
     <ImageView
         android:id="@+id/iv_register_logo"
         android:layout_width="150dp"
@@ -23,9 +23,10 @@
         android:layout_marginTop="40dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:textSize="22sp"
-        android:gravity="center"
-        android:hint="Enter  OTP"/>
+        android:textSize="18sp"
+        android:paddingLeft="10dp"
+        android:inputType="phone"
+        android:hint="Enter Your Phone Number"/>
     <Button
         android:id="@+id/bt_register_otp"
         android:layout_width="match_parent"
@@ -33,7 +34,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:paddingBottom="20dp"
         android:paddingTop="20dp"
         android:textColor="@color/white_smoke"
