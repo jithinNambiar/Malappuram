@@ -1,5 +1,6 @@
 package com.myworks.jithin.malappuram.webservice;
 
+import com.myworks.jithin.malappuram.webservice.tourist_spots.MTSList;
 import com.myworks.jithin.malappuram.webservice.webmodels.main_category.Mcategory;
 import com.myworks.jithin.malappuram.webservice.webmodels.main_category.childcategory.CCateogory;
 import com.myworks.jithin.malappuram.webservice.webmodels.main_category.list_items.MListData;
@@ -26,4 +27,6 @@ public interface ApiService {
 
     @GET("get_listings")
     Call<MListData> getListData();
+    @GET("get_tourist_spots")
+    Call<MTSList> getTouistSpots();
 }

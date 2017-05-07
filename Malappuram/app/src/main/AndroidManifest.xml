@@ -52,7 +52,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".tourist_spot_lisitng.TouristSpotList" />
-        <activity android:name=".account_details.ManageAccountActivity"></activity>
+        <activity android:name=".account_details.ManageAccountActivity" />
+        <activity android:name=".person.PersonsActivity" />
+        <activity android:name=".Offers.OffersActivity"></activity>
     </application>
 
 </manifest>

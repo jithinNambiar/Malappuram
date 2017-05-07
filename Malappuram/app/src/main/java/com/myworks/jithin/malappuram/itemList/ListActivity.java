@@ -46,6 +46,7 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
     private Toolbar toolbar;
     private ProgressDialog mProgress;
     private ImageButton home, category, news, notification;
+    private ImageButton favourite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,7 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
         news = (ImageButton) findViewById(R.id.iv_news);
         notification = (ImageButton) findViewById(R.id.iv_notification);
         toolbar = (Toolbar) findViewById(R.id.toolbar_search);
+        favourite = (ImageButton) findViewById(R.id.favourite);
         setSupportActionBar(toolbar);
         id = getIntent().getStringExtra("id");
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -83,6 +85,7 @@ public class ListActivity extends AppCompatActivity implements View.OnClickListe
         category.setOnClickListener(this);
         news.setOnClickListener(this);
         notification.setOnClickListener(this);
+
     }
 
     public void prepareData() {

@@ -37,7 +37,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainCategoryActivity extends AppCompatActivity implements View.OnClickListener,ConstantService{
+public class MainCategoryActivity extends AppCompatActivity implements View.OnClickListener{
     private RecyclerView recyclerView;
     MainCategoryItems mainCategoryItems ;
     List<MainCategoryItems> items= new ArrayList<>();
@@ -202,8 +202,5 @@ public class MainCategoryActivity extends AppCompatActivity implements View.OnCl
         }
     }
 
-    @Override
-    public String getApiKey() {
-        return  ConstantService.API_KEY;
-    }
+
 }
